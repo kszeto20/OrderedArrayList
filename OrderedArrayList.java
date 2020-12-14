@@ -1,8 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.lang.IllegalArgumentException;
 
 public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T> {
 
