@@ -4,8 +4,12 @@ public class NoNullArrayList<T> extends ArrayList<T> {
 
   private ArrayList<T> data;
 
-  public NoNullArrayList () {
+  public NoNullArrayList() {
     data = new ArrayList<T>();
+  }
+
+  public NoNullArrayList(int startingCapacity) {
+    data = new ArrayList<T>(startingCapacity);
   }
 
   public boolean add(T value) {
