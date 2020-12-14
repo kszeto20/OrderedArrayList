@@ -11,12 +11,18 @@ public class NoNullTester {
     test.add(10);
     test.add(98);
     test.add(1, 1234567890);
-    test.set(6, 4);
-
-
-
-
     System.out.println(test);
+    test.set(6, 4);
+    test.add(345667777);
+    test.add(89);
+    System.out.println(test);
+    test.add(1, 1267890);
+    System.out.println(test);
+    test.set(8, 4);
+    System.out.println(test);
+    test.set(1, 55 );
+    System.out.println(test);
+
 
   }
 

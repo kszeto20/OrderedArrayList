@@ -43,7 +43,15 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   public T set(int index, T value) {
     T previous = get(index);
     add(value);
-    remove(index + 1);
+    if (locate(value) < index) {
+      remove(index + 1);
+    }
+    else if (locate(value) > index) {
+      remove(index);
+    }
+    else{
+      remove(index);
+    }
     return previous;
   }
 
@@ -52,12 +60,18 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     int realInd = 0;
     if(indRn > 0) {
       for(int i = 0; i < size()-1; i++) {
+        if (element == null) {
+          throw new IllegalArgumentException ("member being added cannot be null");
+        }
         if(((element).compareTo(get(i)) == 1) && ((element).compareTo(get(i + 1)) == -1)) {
           realInd = i + 1;
         }
         else if ((element).compareTo(get(i)) == 0){
           realInd = i;
         }
+      }
+      if (element == null) {
+        throw new IllegalArgumentException ("member being added cannot be null");
       }
       if((element).compareTo(get(0)) == -1){
         realInd = 0;
