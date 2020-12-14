@@ -16,5 +16,14 @@ public class NoNullArrayList<T> extends ArrayList<T> {
     return true;
   }
 
+  public T set(int index, T element) {
+    T orig = get(index);
+    if (element == null) {
+      throw new IllegalArgumentException("member being added cannot be null");
+    }
+    super.set(index, element);
+    return orig;
+  }
+
 
 }

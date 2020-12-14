@@ -3,7 +3,9 @@ public class NoNullTester {
     NoNullArrayList<Integer> test = new NoNullArrayList<Integer>();
 
     test.add(4);
-    test.add(null);
+    System.out.println(test.set(0, 3));
+    test.set(0, 8);
+
     System.out.println(test);
   }
 
